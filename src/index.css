@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-eclipse-blue: #0f172a;
+  --color-eclipse-deep: #020617;
+  --color-eclipse-green: #10b981;
+  --color-eclipse-cyan: #06b6d4;
+}
+
+@layer base {
+  body {
+    @apply bg-eclipse-deep text-slate-200 antialiased;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.eclipse-gradient {
+  background: radial-gradient(circle at center, var(--color-eclipse-cyan) 0%, var(--color-eclipse-green) 100%);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-eclipse-cyan to-eclipse-green;
+}
